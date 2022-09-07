@@ -12,7 +12,7 @@
 .headerOption__icon {
   object-fit: contain;
   height: 25px !important;
-  width: 25px;
+  width: 25px !important;
 }
 .headerOption__title {
   font-size: 12px;

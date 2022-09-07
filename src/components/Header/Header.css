@@ -3,10 +3,11 @@
   top: 0;
   display: flex;
   justify-content: space-evenly;
+  background-color: whitesmoke;
   border-bottom: 0.1px solid lightgray;
   padding: 10px 0;
   width: 100%;
-  z-index: 999;
+  z-index: 9999;
 }
 
 .header__left {
@@ -25,7 +26,7 @@
   border-radius: 5px;
   color: gray;
   height: 22px;
-  background-color: #eef3f8;
+  background-color: white;
 }
 .header__search > input {
   outline: none;

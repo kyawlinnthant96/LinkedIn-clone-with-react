@@ -15,15 +15,28 @@ import {
   Chat,
 } from "@mui/icons-material";
 import { logo, profile } from "../../images";
+// redux
+import { useDispatch } from "react-redux";
+import { logout } from "../../features/userSlice";
+// firebase
+import { auth } from "../../Firebase/Firebase";
+import { signOut } from "firebase/auth";
 
 function Header() {
+  const dispatch = useDispatch();
+
+  const logoutOfApp = () => {
+    dispatch(logout());
+    signOut(auth);
+  };
+
   return (
     <div className="header">
       <div className="header__left">
         <img src={logo} alt="logo" />
         <div className="header__search">
           <Search />
-          <input type="text" />
+          <input type="text" placeholder="Search" />
         </div>
       </div>
 
@@ -33,7 +46,7 @@ function Header() {
         <HeaderOption Icon={BusinessCenter} title="Jobs" />
         <HeaderOption Icon={Chat} title="Messaging" />
         <HeaderOption Icon={Notifications} title="Notifications" />
-        <HeaderOption avatar={profile} title="Me" />
+        <HeaderOption onClick={logoutOfApp} avatar={true} title="Me" />
       </div>
     </div>
   );
